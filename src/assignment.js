@@ -14,6 +14,7 @@ const assignment = {};
  * @param {Number} destination is the stopping number
  * @returns number the sum of the numbers from 1 to destination
  */
+
 function sumOfNumbersTo(n) {
     let sum = 0;
     for ( let i = 1; i <= n; i++) {
