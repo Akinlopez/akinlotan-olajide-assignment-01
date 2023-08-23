@@ -14,40 +14,40 @@ const assignment = {};
  * @param {Number} destination is the stopping number
  * @returns number the sum of the numbers from 1 to destination
  */
-function sumOfNumbersTo(destination) {
+function sumOfNumbersTo(n) {
     let sum = 0;
+    for ( let i = 1; i <= n; i++) {
+        sum += i;
+    }
     return sum
 }
+
+const total = sumOfNumbersTo(10)
+console.log(total);
 
 
 // assignment.sumOfNumbersTo = sumOfNumbersTo;
 
-/**
- * Challenge - 2
- *
- * Calculate count, sum and put in an array the even numbers from 1 to a destination. Object keys are count, sum, arrayOfEvenNumbers.
- *
- * If you did Challenge - 2, remove the comment in the line just after this function
- *
- * @param {Number} destination the stopping number
- * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
- */
-function countEvenNumbersWithin(destination) {
-    // Write your code here
-    // get the number from 1 to destination
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let result = countEvenNumbersWithin(numbers);
+
+function countEvenNumbersWithin(numbers) {
     let sum = 0;
     let count = 0;
-    let arrayOfEvenNumbers = [];
-
-    return {
-        // property value shorthand
-        // when the property name and the value name are the same
-        // you can just write the property name in your object
-        count,
-        sum,
-        arrayOfEvenNumbers
-    };
-}
+     let arrayOfEvenNumbers = [];
+     for(let i = 0; i < numbers.length; i++) {
+        if( numbers[i] % 2 === 0){
+            count++;
+            sum += numbers[i];}
+        }
+        return { count, 
+            sum,
+            arrayOfEvenNumbers};
+        }
+        console.log('count of even numbers:', result.count);
+        console.log('sum of even numbers:', result.sum);
+        console.log(arrayOfEvenNumbers);
+    
 
 // assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
@@ -66,11 +66,30 @@ function countEvenNumbersWithin(destination) {
  * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
  * @returns Array the converted temperatures in Fahrenheit
  */
-function celsiusToFahrenheit(arrayOfNumbers) {
-    let result = [];
 
-    return result;
+let temperatureInCelsius = [ -28, 0, 22, 45, 53, 67];
+
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+  }
+
+function convertArrayCelsiusToFarenheit(arrayOfCelsius) {
+    const farenheitArray = celsiusArray.map(celsiusToFahrenheit);
+    let result = [];
+    return  farenheitArray;
 }
+const temperaturesInFahrenheit = convertArrayCelsiusToFahrenheit(temperaturesInCelsius);
+
+console.log("Temperatures in Celsius:", temperaturesInCelsius);
+console.log("Temperatures in Fahrenheit:", temperaturesInFahrenheit);
+
+
+// The Math.trunc function works on a single number, not on array of numbers
+
+let truncatedTemperatures = temperaturesInFahrenheit.map(Math.trunc);
+
+console.log("Original Temperatures:", temperaturesInFahrenheit);
+console.log("Truncated Temperatures:", truncatedTemperatures);
 
 // assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
