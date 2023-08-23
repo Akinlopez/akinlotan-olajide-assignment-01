@@ -16,21 +16,21 @@ const assignment = {};
  */
 
 function sumOfNumbersTo(n) {
-    let sum = 0;
+    let total = 0;
     for ( let i = 1; i <= n; i++) {
-        sum += i;
+        total += i;
     }
-    return sum
+    return total;
 }
 
-const total = sumOfNumbersTo(10)
-console.log(total);
+const result = sumOfNumbersTo(10);
 
+console.log('result:', result);
 
 // assignment.sumOfNumbersTo = sumOfNumbersTo;
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let result = countEvenNumbersWithin(numbers);
+
+
 
 function countEvenNumbersWithin(numbers) {
     let sum = 0;
@@ -45,11 +45,13 @@ function countEvenNumbersWithin(numbers) {
             sum,
             arrayOfEvenNumbers};
         }
-        console.log('count of even numbers:', result.count);
-        console.log('sum of even numbers:', result.sum);
-        console.log(arrayOfEvenNumbers);
-    
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let result = countEvenNumbersWithin(numbers);
 
+        console.log('count of even numbers:',result.count);
+        console.log('sum of even numbers:',result.sum);
+        
+   
 // assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
@@ -68,29 +70,32 @@ function countEvenNumbersWithin(numbers) {
  * @returns Array the converted temperatures in Fahrenheit
  */
 
-let temperatureInCelsius = [ -28, 0, 22, 45, 53, 67];
+
 
 function celsiusToFahrenheit(celsius) {
     return (celsius * 9/5) + 32;
   }
-
-function convertArrayCelsiusToFarenheit(arrayOfCelsius) {
-    const farenheitArray = celsiusArray.map(celsiusToFahrenheit);
-    let result = [];
-    return  farenheitArray;
-}
-const temperaturesInFahrenheit = convertArrayCelsiusToFahrenheit(temperaturesInCelsius);
-
-console.log("Temperatures in Celsius:", temperaturesInCelsius);
-console.log("Temperatures in Fahrenheit:", temperaturesInFahrenheit);
-
+  
+  function convertArrayCelsiusToFahrenheit(celsiusArray) {
+    let fahrenheitArray = celsiusArray.map(celsiusToFahrenheit);
+    return fahrenheitArray;
+  }
+  
+  let temperaturesInCelsius = [-28, 0, 22, 45, 53, 67];
+  let temperaturesInFahrenheit = convertArrayCelsiusToFahrenheit(temperaturesInCelsius);
+  
+  console.log("Temperatures in Celsius:", temperaturesInCelsius);
+  console.log("Temperatures in Fahrenheit:", temperaturesInFahrenheit);
+  
+  console.log("Temperatures in Celsius:",temperaturesInCelsius);
+console.log("Temperatures in Fahrenheit:",temperaturesInFahrenheit);
 
 // The Math.trunc function works on a single number, not on array of numbers
 
 let truncatedTemperatures = temperaturesInFahrenheit.map(Math.trunc);
 
-console.log("Original Temperatures:", temperaturesInFahrenheit);
-console.log("Truncated Temperatures:", truncatedTemperatures);
+console.log("Original Temperatures:",temperaturesInFahrenheit);
+console.log("Truncated Temperatures:",truncatedTemperatures);
 
 // assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
