@@ -15,18 +15,8 @@ const assignment = {};
  * @returns number the sum of the numbers from 1 to destination
  */
 
-function sumOfNumbersTo(End) {
-    let sum = 0;
-    for ( let i = 1; i <= End; i++) {
-        sum += i;
-    }
-    return sum;
-}
 
-const End = 10;
-const sum = sumOfNumbersTo(End);
-console.log('The sum of numbers between 1 and (End) is: $(sum)');
-console.log('sum:', sum);
+
 
 // assignment.sumOfNumbersTo = sumOfNumbersTo;
 
