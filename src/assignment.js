@@ -15,42 +15,39 @@ const assignment = {};
  * @returns number the sum of the numbers from 1 to destination
  */
 
-function sumOfNumbersTo(n) {
-    let total = 0;
-    for ( let i = 1; i <= n; i++) {
-        total += i;
+function sumOfNumbersTo(End) {
+    let sum = 0;
+    for ( let i = 1; i <= End; i++) {
+        sum += i;
     }
-    return total;
+    return sum;
 }
 
-const result = sumOfNumbersTo(10);
-
-console.log('result:', result);
+const End = 10;
+const sum = sumOfNumbersTo(End);
+console.log('The sum of numbers between 1 and $(End) is: $(sum)');
+console.log('sum:', sum);
 
 // assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 
-
-
-function countEvenNumbersWithin(numbers) {
+function countEvenNumbersWithin(array) {
+    
     let sum = 0;
     let count = 0;
-     let arrayOfEvenNumbers = [];
-     for(let i = 0; i < numbers.length; i++) {
+     for (let numbers of array) {
         if( numbers[i] % 2 === 0){
             count++;
             sum += numbers[i];}
+              
         }
-        return { count, 
-            sum,
-            arrayOfEvenNumbers};
-        }
-        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let result = countEvenNumbersWithin(numbers);
+        return { count,sum };
+    }
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const result = countEvenNumbersWithin(numbers);
 
-        console.log('count of even numbers:',result.count);
-        console.log('sum of even numbers:',result.sum);
-        
+        console.log('Count of even numbers:,${result.count}')
+        console.log('Sum of even numbers:,${result.sum}');        
    
 // assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
@@ -70,32 +67,16 @@ function countEvenNumbersWithin(numbers) {
  * @returns Array the converted temperatures in Fahrenheit
  */
 
-
-
-function celsiusToFahrenheit(celsius) {
-    return (celsius * 9/5) + 32;
+  function celsiusToFahrenheit(celsius) {
+    const farenheit = ( celsius * 9/5) + 32;
+    return Math.trunc(farenheit);     //Removing decimal figures using Math.trunc()
   }
   
-  function convertArrayCelsiusToFahrenheit(celsiusArray) {
-    let fahrenheitArray = celsiusArray.map(celsiusToFahrenheit);
-    return fahrenheitArray;
-  }
+  const celsiusTemperature = 25.5;
+  const farenheitTemperature = celsiusToFahrenheit(celsiusTemperature);
+  console.log('${celsiusTemperature}C is approx ${farenheitTemperature}');
   
-  let temperaturesInCelsius = [-28, 0, 22, 45, 53, 67];
-  let temperaturesInFahrenheit = convertArrayCelsiusToFahrenheit(temperaturesInCelsius);
   
-  console.log("Temperatures in Celsius:", temperaturesInCelsius);
-  console.log("Temperatures in Fahrenheit:", temperaturesInFahrenheit);
-  
-  console.log("Temperatures in Celsius:",temperaturesInCelsius);
-console.log("Temperatures in Fahrenheit:",temperaturesInFahrenheit);
-
-// The Math.trunc function works on a single number, not on array of numbers
-
-let truncatedTemperatures = temperaturesInFahrenheit.map(Math.trunc);
-
-console.log("Original Temperatures:",temperaturesInFahrenheit);
-console.log("Truncated Temperatures:",truncatedTemperatures);
 
 // assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
