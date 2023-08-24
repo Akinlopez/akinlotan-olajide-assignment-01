@@ -25,7 +25,7 @@ function sumOfNumbersTo(End) {
 
 const End = 10;
 const sum = sumOfNumbersTo(End);
-console.log('The sum of numbers between 1 and $(End) is: $(sum)');
+console.log('The sum of numbers between 1 and (End) is: $(sum)');
 console.log('sum:', sum);
 
 // assignment.sumOfNumbersTo = sumOfNumbersTo;
